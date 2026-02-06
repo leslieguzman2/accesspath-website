@@ -7,11 +7,11 @@
     <meta name="description" content="Access Path Innovations helps universities and families solve the accessibility barriers that prevent students with complex physical needs from enrolling and thriving in higher education.">
     <meta name="keywords" content="college accessibility, disability higher education, accessible college, students with disabilities, university accessibility, complex care needs, Duchenne muscular dystrophy college, disability inclusion, higher education accessibility consulting, AHEAD, rare disease college, PCA college support, quadriplegia college, universal design higher education, disability advocacy college, accessible campus, inclusion higher education, speaking disability inclusion, complex physical needs university, spinal muscular atrophy college, cerebral palsy college, wheelchair college life">
     <meta name="author" content="Access Path Innovations">
-    <meta name="robots" content="index, follow">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co; frame-ancestors 'none'; base-uri 'self'; upgrade-insecure-requests">
     <link rel="canonical" href="https://www.accesspathinnovations.com">
 
     <!-- Open Graph / Social Sharing -->
@@ -20,11 +20,13 @@
     <meta property="og:description" content="Helping universities and families solve the accessibility barriers that prevent students with complex physical needs from thriving in higher education.">
     <meta property="og:url" content="https://www.accesspathinnovations.com">
     <meta property="og:site_name" content="Access Path Innovations">
+    <meta property="og:image" content="https://www.accesspathinnovations.com/dalle-campus.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Access Path Innovations | Bridge the Gaps. Change the Story.">
     <meta name="twitter:description" content="Helping universities and families solve the accessibility barriers that prevent students with complex physical needs from thriving in higher education.">
+    <meta name="twitter:image" content="https://www.accesspathinnovations.com/dalle-campus.png">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -44,8 +46,13 @@
     }
     </script>
 
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
+    <meta name="theme-color" content="#1b1f4b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
         /* === RESET & BASE === */
@@ -1461,6 +1468,9 @@
 </head>
 <body>
 
+    <!-- SKIP NAV -->
+    <a href="#problem" class="skip-nav" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem 2rem;background:#1b1f4b;color:#fff;text-decoration:none;font-weight:600;border-radius:0 0 8px 0" onfocus="this.style.position='fixed';this.style.left='0';this.style.top='0';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden'">Skip to content</a>
+
     <!-- NAVIGATION -->
     <nav id="nav">
         <div class="scroll-progress" id="scroll-progress"></div>
@@ -1502,7 +1512,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="diego-hero.jpg" alt="Diego and friends on campus — real college life with a power wheelchair, autumn trees, and mountain views" onerror="this.src='dalle-campus.png'">
+                <img src="dalle-campus.png" alt="Diego and friends on campus — real college life with a power wheelchair, autumn trees, and mountain views">
                 <div class="hero-image-caption">This is what a full college life looks like.</div>
             </div>
         </div>
@@ -1725,12 +1735,14 @@
             <p>Get updates on accessibility in higher education, new resources, and stories from the field.</p>
             <form class="email-form" action="https://formsubmit.co/hey@accesspathinnovations.com" method="POST">
                 <input type="hidden" name="_subject" value="New Access Path subscriber!">
-                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_captcha" value="true">
                 <input type="hidden" name="_template" value="box">
-                <input type="email" name="email" placeholder="Your email address" required>
+                <input type="hidden" name="_next" value="https://www.accesspathinnovations.com/">
+                <input type="text" name="_honey" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" autocomplete="email">
                 <button type="submit">Subscribe</button>
             </form>
-            <p class="email-note">No spam. Just real updates that matter.</p>
+            <p class="email-note">No spam. Just real updates that matter. By subscribing, you agree to our <a href="privacy.html" style="color: var(--accent-purple); text-decoration: none; font-weight: 500;">Privacy Policy</a>.</p>
         </div>
     </section>
 
@@ -1743,6 +1755,12 @@
                 <a href="https://www.linkedin.com/in/leslieguzman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://www.instagram.com/limitlesscollege" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="mailto:hey@accesspathinnovations.com">Email</a>
+            </div>
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility.html">Accessibility</a>
             </div>
             <div class="footer-copy">&copy; 2026 Access Path Innovations. All rights reserved.</div>
         </div>
