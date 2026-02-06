@@ -11,7 +11,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
     <link rel="canonical" href="https://www.accesspathinnovations.com">
 
     <!-- Open Graph / Social Sharing -->
@@ -1013,8 +1013,142 @@
         }
 
         /* === RESPONSIVE === */
+        /* === SCROLL PROGRESS BAR (Magic Scrollbar) === */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            width: 0%;
+            background: linear-gradient(90deg, var(--accent-purple), var(--accent-blue), var(--accent-gold));
+            z-index: 1001;
+            transition: width 0.05s linear;
+            border-radius: 0 2px 2px 0;
+            box-shadow: 0 0 8px rgba(123, 79, 176, 0.5);
+        }
+
+        /* === CUSTOM SCROLLBAR === */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--light-bg);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--accent-purple), var(--accent-blue));
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: linear-gradient(180deg, var(--deep-blue), var(--accent-purple));
+        }
+
+        /* Firefox scrollbar */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent-purple) var(--light-bg);
+        }
+
+        /* === NAV SCROLL STATE === */
+        nav.scrolled {
+            padding: 0.6rem 0;
+            background: rgba(26, 39, 68, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-purple);
+        }
+
+        /* === SECTION REVEAL ANIMATIONS === */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered children */
+        .reveal-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal-children.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-children.visible > *:nth-child(1) { transition-delay: 0.1s; }
+        .reveal-children.visible > *:nth-child(2) { transition-delay: 0.2s; }
+        .reveal-children.visible > *:nth-child(3) { transition-delay: 0.3s; }
+        .reveal-children.visible > *:nth-child(4) { transition-delay: 0.4s; }
+
+        /* === HAMBURGER MENU === */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
+            z-index: 1002;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(26, 39, 68, 0.98);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem;
+                z-index: 1001;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links a {
+                font-size: 1.2rem;
+            }
             .hero-content { grid-template-columns: 1fr; padding: 5rem 1.5rem 3rem; }
             .hero-image { order: -1; }
             .hero-image img { height: 250px; }
@@ -1029,11 +1163,19 @@
 </head>
 <body>
 
+    <!-- SCROLL PROGRESS BAR -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
     <!-- NAVIGATION -->
-    <nav>
+    <nav id="mainNav">
         <div class="nav-container">
             <a href="#" class="logo"><img src="logo.jpg" alt="Access Path Innovations" style="height: 40px; margin-right: 8px; vertical-align: middle; border-radius: 4px;">Access<span>Path</span></a>
-            <ul class="nav-links">
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#problem">The Problem</a></li>
                 <li><a href="#services">What We Do</a></li>
                 <li><a href="#story">The Real Story</a></li>
@@ -1076,7 +1218,7 @@
             <div class="section-label">The Challenge</div>
             <h2 class="section-title">Families are reinventing the wheel. Every single time.</h2>
             <p class="section-desc">Families of students with complex physical needs don't have a playbook. They're learning reactively — often too late and always overwhelmed. Too much falls on advocacy, strategy, and figuring out things that shouldn't need to be figured out from scratch. That's not fair.</p>
-            <div class="stats-row">
+            <div class="stats-row reveal-children">
                 <div class="stat-card">
                     <div class="stat-number">Every<span class="accent">.</span></div>
                     <div class="stat-label">family starts from zero — no roadmap, no system, no shared knowledge</div>
@@ -1099,7 +1241,7 @@
             <div class="section-label">What We Do</div>
             <h2 class="section-title">Inclusion isn't charity. It's design.</h2>
             <p class="section-desc">We don't do accommodations as an afterthought. We apply universal design to the full college experience — so it simply works for everyone.</p>
-            <div class="services-grid">
+            <div class="services-grid reveal-children">
                 <div class="service-card">
                     <div class="service-icon teal">&#x1F3D7;</div>
                     <h3>Systemic Solutions for Universities</h3>
@@ -1124,7 +1266,7 @@
         <div class="section-container">
             <div class="section-label">Why Access Path</div>
             <h2 class="section-title">Built from lived experience and systems expertise.</h2>
-            <div class="why-grid">
+            <div class="why-grid reveal">
                 <div class="why-text">
                     <h3>We understand both sides.</h3>
                     <p>Access Path was founded by a parent and systems thinker who has navigated every barrier that keeps students with complex physical needs from thriving in higher education.</p>
@@ -1151,7 +1293,7 @@
             <div class="section-label">The Real Story</div>
             <h2 class="section-title">Not just enrollment. A full life.</h2>
             <p class="section-desc">A student with Duchenne Muscular Dystrophy studying Urban Planning. Living independently. Playing power soccer. Making friends. Building a career. This isn't an inspirational exception — this is what happens when someone walks the path first.</p>
-            <div class="story-grid">
+            <div class="story-grid reveal">
                 <div class="story-visual">
                     <img src="dalle-campus.png" alt="Inclusive campus life — students with and without disabilities enjoying college together" class="story-visual-image">
                     <div class="story-visual-content">
@@ -1177,7 +1319,7 @@
             <div class="section-label">Both Sides</div>
             <h2 class="section-title">Nobody should be doing this alone.</h2>
             <p class="section-desc">Families know their kids. Schools know their systems. Neither has the full picture. We connect both — so the path gets clearer for everyone.</p>
-            <div class="dual-grid">
+            <div class="dual-grid reveal-children">
                 <div class="dual-card families">
                     <h3>For Families</h3>
                     <p>You know your child's needs better than anyone. But you haven't walked this path yet — and you shouldn't have to figure out every system, every workaround, every advocacy strategy on your own.</p>
@@ -1208,7 +1350,7 @@
             <div class="section-label">Insights</div>
             <h2 class="section-title">From the field.</h2>
             <p class="section-desc">Perspectives on accessibility, higher education, and the systems that need to change.</p>
-            <div class="blog-grid">
+            <div class="blog-grid reveal-children">
                 <div class="blog-card">
                     <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Collaborative learning space" class="blog-card-image">
                     <div class="blog-card-header">
@@ -1297,6 +1439,121 @@
             <div class="footer-copy">&copy; 2026 Access Path Innovations. All rights reserved.</div>
         </div>
     </footer>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // --- Scroll Progress Bar ---
+        var progressBar = document.getElementById('scrollProgress');
+
+        function updateProgress() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            progressBar.style.width = progress + '%';
+        }
+
+        // --- Nav Scroll State ---
+        var nav = document.getElementById('mainNav');
+
+        function updateNav() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        }
+
+        // --- Active Nav Link ---
+        var sections = document.querySelectorAll('section[id]');
+        var navAnchors = document.querySelectorAll('.nav-links a:not(.nav-cta)');
+
+        function updateActiveLink() {
+            var scrollPos = window.pageYOffset + 120;
+            var current = '';
+
+            for (var i = 0; i < sections.length; i++) {
+                var section = sections[i];
+                if (section.offsetTop <= scrollPos) {
+                    current = section.getAttribute('id');
+                }
+            }
+
+            for (var j = 0; j < navAnchors.length; j++) {
+                var anchor = navAnchors[j];
+                anchor.classList.remove('active');
+                if (anchor.getAttribute('href') === '#' + current) {
+                    anchor.classList.add('active');
+                }
+            }
+        }
+
+        // --- Throttled Scroll Handler (rAF) ---
+        var ticking = false;
+
+        function onScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(function() {
+                    updateProgress();
+                    updateNav();
+                    updateActiveLink();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+
+        // --- Section Reveal on Scroll (IntersectionObserver) ---
+        var revealEls = document.querySelectorAll('.reveal, .reveal-children');
+
+        if ('IntersectionObserver' in window) {
+            var observer = new IntersectionObserver(function(entries) {
+                for (var i = 0; i < entries.length; i++) {
+                    if (entries[i].isIntersecting) {
+                        entries[i].target.classList.add('visible');
+                        observer.unobserve(entries[i].target);
+                    }
+                }
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+            for (var i = 0; i < revealEls.length; i++) {
+                observer.observe(revealEls[i]);
+            }
+        } else {
+            // Fallback: show everything immediately
+            for (var i = 0; i < revealEls.length; i++) {
+                revealEls[i].classList.add('visible');
+            }
+        }
+
+        // --- Hamburger Menu ---
+        var hamburger = document.getElementById('hamburger');
+        var navLinks = document.getElementById('navLinks');
+
+        hamburger.addEventListener('click', function() {
+            hamburger.classList.toggle('open');
+            navLinks.classList.toggle('open');
+        });
+
+        // Close mobile menu when a link is clicked
+        var mobileLinks = navLinks.querySelectorAll('a');
+        for (var i = 0; i < mobileLinks.length; i++) {
+            mobileLinks[i].addEventListener('click', function() {
+                hamburger.classList.remove('open');
+                navLinks.classList.remove('open');
+            });
+        }
+
+        // --- Init on load ---
+        updateProgress();
+        updateNav();
+        updateActiveLink();
+    })();
+    </script>
 
 </body>
 </html>
