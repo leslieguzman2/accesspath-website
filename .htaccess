@@ -9,9 +9,10 @@ RewriteEngine On
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
-# Redirect www to non-www (canonical)
-RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
-RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# Redirect non-www to www (canonical — matches all site URLs)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteCond %{HTTP_HOST} !^localhost [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}/$1 [R=301,L]
 
 # ============================================================
 # SECURITY HEADERS
@@ -113,8 +114,8 @@ ErrorDocument 404 /404.html
     </IfModule>
 </Files>
 
-# Block access to backup and source files
-<FilesMatch "\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp)$">
+# Block access to backup, source, and sensitive files
+<FilesMatch "\.(bak|config|dist|fla|inc|ini|log|psd|sh|sql|swp|yml|yaml|md|php|py|rb|pl)$">
     <IfModule mod_authz_core.c>
         Require all denied
     </IfModule>

@@ -20,11 +20,13 @@
     <meta property="og:description" content="Helping universities and families solve the accessibility barriers that prevent students with complex physical needs from thriving in higher education.">
     <meta property="og:url" content="https://www.accesspathinnovations.com">
     <meta property="og:site_name" content="Access Path Innovations">
+    <meta property="og:image" content="https://www.accesspathinnovations.com/dalle-campus.png">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Access Path Innovations | Bridge the Gaps. Change the Story.">
     <meta name="twitter:description" content="Helping universities and families solve the accessibility barriers that prevent students with complex physical needs from thriving in higher education.">
+    <meta name="twitter:image" content="https://www.accesspathinnovations.com/dalle-campus.png">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -45,6 +47,8 @@
     </script>
 
     <link rel="manifest" href="site.webmanifest">
+    <link rel="icon" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     <meta name="theme-color" content="#1b1f4b">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1032,8 +1036,11 @@
 </head>
 <body>
 
+    <!-- SKIP NAV -->
+    <a href="#problem" class="skip-nav" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem 2rem;background:#1b1f4b;color:#fff;text-decoration:none;font-weight:600;border-radius:0 0 8px 0" onfocus="this.style.position='fixed';this.style.left='0';this.style.top='0';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden'">Skip to content</a>
+
     <!-- NAVIGATION -->
-    <nav>
+    <nav aria-label="Main navigation">
         <div class="nav-container">
             <a href="#" class="logo"><img src="logo.jpg" alt="Access Path Innovations" style="height: 40px; margin-right: 8px; vertical-align: middle; border-radius: 4px;">Access<span>Path</span></a>
             <ul class="nav-links">
@@ -1067,7 +1074,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="diego-hero.jpg" alt="Diego and friends on campus — real college life with a power wheelchair, autumn trees, and mountain views" onerror="this.src='dalle-campus.png'">
+                <img src="dalle-campus.png" alt="Diego and friends on campus — real college life with a power wheelchair, autumn trees, and mountain views">
                 <div class="hero-image-caption">This is what a full college life looks like.</div>
             </div>
         </div>
@@ -1156,7 +1163,7 @@
             <p class="section-desc">A student with Duchenne Muscular Dystrophy studying Urban Planning. Living independently. Playing power soccer. Making friends. Building a career. This isn't an inspirational exception — this is what happens when someone walks the path first.</p>
             <div class="story-grid">
                 <div class="story-visual">
-                    <img src="dalle-campus.png" alt="Inclusive campus life — students with and without disabilities enjoying college together" class="story-visual-image">
+                    <img src="dalle-campus.png" alt="Inclusive campus life — students with and without disabilities enjoying college together" class="story-visual-image" loading="lazy">
                     <div class="story-visual-content">
                         <div class="story-stat">It works.</div>
                         <div class="story-stat-label" style="margin-bottom: 1.5rem;">When the right systems are in place, students with complex physical needs don't just attend college — they live it fully.</div>
@@ -1213,7 +1220,7 @@
             <p class="section-desc">Perspectives on accessibility, higher education, and the systems that need to change.</p>
             <div class="blog-grid">
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Collaborative learning space" class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=600&q=80" alt="Collaborative learning space" class="blog-card-image" loading="lazy">
                     <div class="blog-card-header">
                         <span class="blog-tag">Universal Design</span>
                         <h3>Inclusion Is Design, Not Charity: Rethinking How Universities Welcome Students with Complex Needs</h3>
@@ -1221,7 +1228,7 @@
                     <p>When we stop treating accessibility as an accommodation and start treating it as design, everything changes — for the student, the institution, and the people who support them.</p>
                 </div>
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Diverse group of friends" class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Diverse group of friends" class="blog-card-image" loading="lazy">
                     <div class="blog-card-header">
                         <span class="blog-tag">Families</span>
                         <h3>You Don't Know What You Don't Know: Why Reactive Learning Is Failing Families</h3>
@@ -1229,7 +1236,7 @@
                     <p>Families of students with complex needs shouldn't have to become systems experts overnight. Here's why the current model puts too much on their shoulders — and what needs to change.</p>
                 </div>
                 <div class="blog-card">
-                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" alt="Graduation celebration" class="blog-card-image">
+                    <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" alt="Graduation celebration" class="blog-card-image" loading="lazy">
                     <div class="blog-card-header">
                         <span class="blog-tag">Full College Life</span>
                         <h3>Beyond Enrollment: What a Full College Life Actually Looks Like for Students with Complex Needs</h3>
@@ -1280,8 +1287,9 @@
                 <input type="hidden" name="_subject" value="New Access Path subscriber!">
                 <input type="hidden" name="_captcha" value="true">
                 <input type="hidden" name="_template" value="box">
-                <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-                <input type="email" name="email" placeholder="Your email address" required>
+                <input type="hidden" name="_next" value="https://www.accesspathinnovations.com/">
+                <input type="text" name="_honey" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" tabindex="-1" autocomplete="off" aria-hidden="true">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address" autocomplete="email">
                 <button type="submit">Subscribe</button>
             </form>
             <p class="email-note">No spam. Just real updates that matter.</p>
