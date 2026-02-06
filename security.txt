@@ -1,0 +1,5 @@
+Contact: mailto:hey@accesspathinnovations.com
+Expires: 2027-02-06T00:00:00.000Z
+Policy: https://www.accesspathinnovations.com/#legal
+Preferred-Languages: en
+Canonical: https://www.accesspathinnovations.com/.well-known/security.txt

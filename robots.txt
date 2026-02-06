@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# AI/LLM Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.accesspathinnovations.com/sitemap.xml
