@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessibility Statement | Access Path Innovations</title>
+    <meta name="description" content="Accessibility Statement for Access Path Innovations — our commitment to digital accessibility and inclusion.">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="canonical" href="https://www.accesspathinnovations.com/accessibility.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1b1f4b;
+            --deep-blue: #2a2d6b;
+            --accent-purple: #7b4fb0;
+            --accent-blue: #5ba4c9;
+            --light-bg: #f5f6fb;
+            --white: #ffffff;
+            --text-dark: #1b1f4b;
+            --text-gray: #5a6578;
+            --text-light: #8892a4;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 39, 68, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent-purple); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-purple) !important;
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+
+        .legal-hero {
+            padding: 8rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            text-align: center;
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-hero p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(123, 79, 176, 0.15);
+        }
+
+        .legal-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ul {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-content ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .legal-content a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .legal-content a:hover { text-decoration: underline; }
+
+        .legal-content .effective-date {
+            display: inline-block;
+            background: rgba(123, 79, 176, 0.1);
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .commitment-box {
+            background: rgba(123, 79, 176, 0.06);
+            border-left: 4px solid var(--accent-purple);
+            padding: 1.5rem 2rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1.5rem 0;
+        }
+
+        .commitment-box p {
+            color: var(--text-dark);
+            font-weight: 500;
+            margin-bottom: 0;
+        }
+
+        footer {
+            background: #0f1a2e;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+
+        .footer-brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand span { color: var(--accent-purple); }
+
+        .footer-tagline {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--accent-purple); }
+
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-legal-links a:hover { color: var(--accent-purple); }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .legal-content { padding: 2rem 1.5rem 3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="logo.jpg" alt="Access Path Innovations" style="height: 40px; margin-right: 8px; vertical-align: middle; border-radius: 4px;">Access<span>Path</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#problem">The Problem</a></li>
+                <li><a href="index.html#services">What We Do</a></li>
+                <li><a href="index.html#story">The Real Story</a></li>
+                <li><a href="index.html#why">Why Us</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="legal-hero">
+        <h1>Accessibility Statement</h1>
+        <p>Our commitment to digital accessibility and inclusion</p>
+    </section>
+
+    <div class="legal-content">
+        <span class="effective-date">Last Updated: February 6, 2026</span>
+
+        <div class="commitment-box">
+            <p>Access Path Innovations is committed to ensuring digital accessibility for people with disabilities. As an organization dedicated to making higher education accessible, we hold our own digital presence to the same standard we advocate for others.</p>
+        </div>
+
+        <h2>1. Our Commitment</h2>
+        <p>We believe that accessibility is a design principle, not an afterthought. Our website strives to conform to the <strong>Web Content Accessibility Guidelines (WCAG) 2.1 Level AA</strong> standards. These guidelines explain how to make web content more accessible to people with a wide array of disabilities, including visual, auditory, physical, speech, cognitive, language, learning, and neurological disabilities.</p>
+
+        <h2>2. Accessibility Features</h2>
+        <p>Our website incorporates the following accessibility features:</p>
+
+        <h3>Structure and Navigation</h3>
+        <ul>
+            <li>Semantic HTML5 markup with proper heading hierarchy</li>
+            <li>Consistent navigation structure across all pages</li>
+            <li>Skip-to-content functionality via anchor-based navigation</li>
+            <li>Descriptive page titles on all pages</li>
+            <li>Language attribute set on the HTML element</li>
+        </ul>
+
+        <h3>Visual Design</h3>
+        <ul>
+            <li>Responsive design that adapts to different screen sizes and zoom levels</li>
+            <li>Text can be resized up to 200% without loss of content or functionality</li>
+            <li>Color is not used as the sole means of conveying information</li>
+            <li>Sufficient color contrast ratios between text and background</li>
+        </ul>
+
+        <h3>Content</h3>
+        <ul>
+            <li>Alt text provided for meaningful images</li>
+            <li>Clear and descriptive link text</li>
+            <li>Form inputs with associated labels</li>
+            <li>Visible focus indicators for keyboard navigation</li>
+        </ul>
+
+        <h3>Technical</h3>
+        <ul>
+            <li>No content that flashes more than three times per second</li>
+            <li>No automatic audio or video playback</li>
+            <li>Site functions without JavaScript (static HTML content)</li>
+            <li>Content Security Policy headers for security without blocking accessibility tools</li>
+        </ul>
+
+        <h2>3. Known Limitations</h2>
+        <p>While we strive for comprehensive accessibility, we acknowledge the following areas where we are continuing to improve:</p>
+        <ul>
+            <li><strong>Third-party content:</strong> Some third-party services we link to (Google Calendar, Instagram, LinkedIn) have their own accessibility practices that are outside our control</li>
+            <li><strong>External images:</strong> Some images loaded from third-party CDNs (Unsplash) may have limitations in our ability to provide fully detailed alt text</li>
+            <li><strong>Mobile navigation:</strong> We are working on improving the mobile navigation experience for screen reader users</li>
+        </ul>
+
+        <h2>4. Compatibility</h2>
+        <p>Our Site is designed to be compatible with the following assistive technologies:</p>
+        <ul>
+            <li>Screen readers (including NVDA, JAWS, VoiceOver, and TalkBack)</li>
+            <li>Screen magnification software</li>
+            <li>Speech recognition software</li>
+            <li>Keyboard-only navigation</li>
+        </ul>
+        <p>Our Site is designed to work with the following browsers:</p>
+        <ul>
+            <li>Google Chrome (latest two versions)</li>
+            <li>Mozilla Firefox (latest two versions)</li>
+            <li>Apple Safari (latest two versions)</li>
+            <li>Microsoft Edge (latest two versions)</li>
+        </ul>
+
+        <h2>5. Standards and Guidelines</h2>
+        <p>Our accessibility efforts are guided by:</p>
+        <ul>
+            <li><strong>WCAG 2.1 Level AA</strong> — Web Content Accessibility Guidelines from the World Wide Web Consortium (W3C)</li>
+            <li><strong>Section 508</strong> — U.S. federal accessibility standards</li>
+            <li><strong>ADA Title III</strong> — Americans with Disabilities Act requirements for public accommodations</li>
+        </ul>
+
+        <h2>6. Feedback and Assistance</h2>
+        <p>We welcome your feedback on the accessibility of our website. If you encounter accessibility barriers or have suggestions for improvement, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:hey@accesspathinnovations.com">hey@accesspathinnovations.com</a></li>
+            <li><strong>Subject line:</strong> "Website Accessibility Feedback"</li>
+        </ul>
+        <p>When contacting us about an accessibility issue, please include:</p>
+        <ul>
+            <li>The web page URL where you encountered the issue</li>
+            <li>A description of the problem</li>
+            <li>The assistive technology you were using (if applicable)</li>
+            <li>Your preferred method of contact</li>
+        </ul>
+        <p>We aim to respond to accessibility feedback within 5 business days and to resolve issues promptly.</p>
+
+        <h2>7. Continuous Improvement</h2>
+        <p>We view accessibility as an ongoing commitment, not a one-time achievement. We are continuously working to improve the accessibility of our website through:</p>
+        <ul>
+            <li>Regular accessibility reviews and testing</li>
+            <li>Incorporating accessibility into our development process</li>
+            <li>Training on accessibility best practices</li>
+            <li>Monitoring and responding to user feedback</li>
+        </ul>
+
+        <div class="commitment-box">
+            <p>Accessibility is core to our mission. We advocate for accessible higher education, and we are committed to practicing what we preach in our own digital spaces. If our website isn't working for you, we want to know — and we want to fix it.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">Access<span>Path</span> Innovations</div>
+            <div class="footer-tagline">Bridge the gaps. Change the story.</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/leslieguzman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/limitlesscollege" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:hey@accesspathinnovations.com">Email</a>
+            </div>
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Access Path Innovations. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+</html>
