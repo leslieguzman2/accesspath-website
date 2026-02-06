@@ -11,7 +11,7 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' https://images.unsplash.com data:; connect-src 'self' https://formsubmit.co; form-action https://formsubmit.co;">
     <link rel="canonical" href="https://www.accesspathinnovations.com">
 
     <!-- Open Graph / Social Sharing -->
@@ -1012,6 +1012,103 @@
             color: var(--text-light);
         }
 
+        /* === COOKIE CONSENT === */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(15, 26, 46, 0.97);
+            backdrop-filter: blur(10px);
+            padding: 1.25rem 2rem;
+            z-index: 9999;
+            display: none;
+            border-top: 1px solid rgba(123, 79, 176, 0.3);
+        }
+
+        .cookie-banner.visible { display: block; }
+
+        .cookie-banner-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .cookie-banner p {
+            color: rgba(255,255,255,0.8);
+            font-size: 0.85rem;
+            line-height: 1.6;
+            margin: 0;
+            flex: 1;
+        }
+
+        .cookie-banner a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .cookie-banner a:hover { text-decoration: underline; }
+
+        .cookie-banner-buttons {
+            display: flex;
+            gap: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .cookie-btn {
+            padding: 0.55rem 1.3rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s;
+        }
+
+        .cookie-btn-accept {
+            background: var(--accent-purple);
+            color: var(--white);
+        }
+
+        .cookie-btn-accept:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(123, 79, 176, 0.4);
+        }
+
+        .cookie-btn-decline {
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .cookie-btn-decline:hover {
+            border-color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.9);
+        }
+
+        /* === FOOTER LEGAL LINKS === */
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-legal-links a:hover { color: var(--accent-purple); }
+
         /* === RESPONSIVE === */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -1024,6 +1121,8 @@
             .email-form { flex-direction: column; }
             .hero-buttons { flex-direction: column; }
             .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+            .cookie-banner-inner { flex-direction: column; text-align: center; }
+            .cookie-banner-buttons { justify-content: center; }
         }
     </style>
 </head>
@@ -1280,7 +1379,7 @@
                 <input type="email" name="email" placeholder="Your email address" required>
                 <button type="submit">Subscribe</button>
             </form>
-            <p class="email-note">No spam. Just real updates that matter.</p>
+            <p class="email-note">No spam. Just real updates that matter. By subscribing, you agree to our <a href="privacy.html" style="color: var(--accent-purple); text-decoration: none; font-weight: 500;">Privacy Policy</a>.</p>
         </div>
     </section>
 
@@ -1294,9 +1393,43 @@
                 <a href="https://www.instagram.com/limitlesscollege" target="_blank" rel="noopener noreferrer">Instagram</a>
                 <a href="mailto:hey@accesspathinnovations.com">Email</a>
             </div>
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
             <div class="footer-copy">&copy; 2026 Access Path Innovations. All rights reserved.</div>
         </div>
     </footer>
+
+    <!-- COOKIE CONSENT BANNER -->
+    <div class="cookie-banner" id="cookieBanner" role="dialog" aria-label="Cookie consent">
+        <div class="cookie-banner-inner">
+            <p>We use essential cookies and third-party services (Google Fonts, Unsplash) that may process your data. See our <a href="cookie-policy.html">Cookie Policy</a> and <a href="privacy.html">Privacy Policy</a> for details.</p>
+            <div class="cookie-banner-buttons">
+                <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+                <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var consent = localStorage.getItem('cookie_consent');
+            if (!consent) {
+                document.getElementById('cookieBanner').classList.add('visible');
+            }
+            document.getElementById('cookieAccept').addEventListener('click', function() {
+                localStorage.setItem('cookie_consent', 'accepted');
+                document.getElementById('cookieBanner').classList.remove('visible');
+            });
+            document.getElementById('cookieDecline').addEventListener('click', function() {
+                localStorage.setItem('cookie_consent', 'declined');
+                document.getElementById('cookieBanner').classList.remove('visible');
+            });
+        })();
+    </script>
 
 </body>
 </html>

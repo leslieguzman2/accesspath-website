@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy | Access Path Innovations</title>
+    <meta name="description" content="Cookie Policy for Access Path Innovations — how cookies and similar technologies are used on our website.">
+    <meta name="robots" content="index, follow">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <link rel="canonical" href="https://www.accesspathinnovations.com/cookie-policy.html">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --navy: #1b1f4b;
+            --deep-blue: #2a2d6b;
+            --accent-purple: #7b4fb0;
+            --accent-blue: #5ba4c9;
+            --light-bg: #f5f6fb;
+            --white: #ffffff;
+            --text-dark: #1b1f4b;
+            --text-gray: #5a6578;
+            --text-light: #8892a4;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: var(--white);
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(26, 39, 68, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .logo span { color: var(--accent-purple); }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-purple); }
+
+        .nav-cta {
+            background: var(--accent-purple) !important;
+            color: var(--white) !important;
+            padding: 0.6rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600 !important;
+        }
+
+        .legal-hero {
+            padding: 8rem 2rem 3rem;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--deep-blue) 100%);
+            text-align: center;
+        }
+
+        .legal-hero h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-hero p {
+            color: rgba(255,255,255,0.65);
+            font-size: 0.95rem;
+        }
+
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 3rem 2rem 4rem;
+        }
+
+        .legal-content h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(123, 79, 176, 0.15);
+        }
+
+        .legal-content h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .legal-content p {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .legal-content ul {
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+        }
+
+        .legal-content ul li {
+            margin-bottom: 0.4rem;
+        }
+
+        .legal-content a {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .legal-content a:hover { text-decoration: underline; }
+
+        .legal-content .effective-date {
+            display: inline-block;
+            background: rgba(123, 79, 176, 0.1);
+            color: var(--accent-purple);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.5rem;
+        }
+
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        .cookie-table th {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            font-weight: 600;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid rgba(123, 79, 176, 0.15);
+        }
+
+        .cookie-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(26, 39, 68, 0.06);
+            color: var(--text-gray);
+            vertical-align: top;
+        }
+
+        .cookie-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        footer {
+            background: #0f1a2e;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-container { max-width: 1200px; margin: 0 auto; }
+
+        .footer-brand {
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-brand span { color: var(--accent-purple); }
+
+        .footer-tagline {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover { color: var(--accent-purple); }
+
+        .footer-legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-legal-links a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            font-size: 0.8rem;
+            transition: color 0.3s;
+        }
+
+        .footer-legal-links a:hover { color: var(--accent-purple); }
+
+        .footer-copy {
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .legal-content { padding: 2rem 1.5rem 3rem; }
+            .cookie-table { font-size: 0.8rem; }
+            .cookie-table th, .cookie-table td { padding: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo"><img src="logo.jpg" alt="Access Path Innovations" style="height: 40px; margin-right: 8px; vertical-align: middle; border-radius: 4px;">Access<span>Path</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#problem">The Problem</a></li>
+                <li><a href="index.html#services">What We Do</a></li>
+                <li><a href="index.html#story">The Real Story</a></li>
+                <li><a href="index.html#why">Why Us</a></li>
+                <li><a href="index.html#contact" class="nav-cta">Book a Call</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="legal-hero">
+        <h1>Cookie Policy</h1>
+        <p>How cookies and similar technologies are used on our website</p>
+    </section>
+
+    <div class="legal-content">
+        <span class="effective-date">Effective Date: February 6, 2026</span>
+
+        <p>This Cookie Policy explains how Access Path Innovations ("we," "us," or "our") uses cookies and similar technologies on <a href="https://www.accesspathinnovations.com">www.accesspathinnovations.com</a> (the "Site"). It should be read alongside our <a href="privacy.html">Privacy Policy</a>.</p>
+
+        <h2>1. What Are Cookies?</h2>
+        <p>Cookies are small text files that are stored on your device (computer, tablet, or mobile phone) when you visit a website. They are widely used to make websites work more efficiently and to provide information to website operators.</p>
+        <p>Similar technologies include web beacons, pixels, and local storage, which function in a comparable way.</p>
+
+        <h2>2. Our Use of Cookies</h2>
+        <p>Our Site is built as a static HTML website and <strong>does not set any first-party cookies</strong>. We do not use cookies for analytics, advertising, or user tracking.</p>
+        <p>However, we use the following cookie for managing your preferences:</p>
+
+        <table class="cookie-table">
+            <thead>
+                <tr>
+                    <th>Cookie Name</th>
+                    <th>Purpose</th>
+                    <th>Type</th>
+                    <th>Duration</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>cookie_consent</td>
+                    <td>Stores your cookie consent preference so the cookie banner is not shown repeatedly</td>
+                    <td>Functional (localStorage)</td>
+                    <td>365 days</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>3. Third-Party Cookies and Services</h2>
+        <p>While we do not set tracking cookies ourselves, we use third-party services that may set their own cookies or collect data when you visit our Site:</p>
+
+        <h3>Google Fonts</h3>
+        <p>We use Google Fonts to display the Inter and Playfair Display typefaces. When you visit our Site, your browser makes requests to Google's servers to load these fonts. Google may log this data according to their privacy policy.</p>
+        <ul>
+            <li><strong>Data collected:</strong> IP address, browser user agent, referring URL</li>
+            <li><strong>Purpose:</strong> Font delivery</li>
+            <li><strong>More info:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        </ul>
+
+        <h3>Unsplash</h3>
+        <p>Blog section images are loaded from Unsplash's content delivery network (CDN). Unsplash may log standard access data when images are requested.</p>
+        <ul>
+            <li><strong>Data collected:</strong> IP address, browser user agent</li>
+            <li><strong>Purpose:</strong> Image delivery</li>
+            <li><strong>More info:</strong> <a href="https://unsplash.com/privacy" target="_blank" rel="noopener noreferrer">Unsplash Privacy Policy</a></li>
+        </ul>
+
+        <h3>FormSubmit.co</h3>
+        <p>Our email subscription form is processed through FormSubmit.co. When you submit the form, your email address is transmitted to their servers.</p>
+        <ul>
+            <li><strong>Data collected:</strong> Email address, form submission data</li>
+            <li><strong>Purpose:</strong> Email form processing</li>
+            <li><strong>More info:</strong> <a href="https://formsubmit.co" target="_blank" rel="noopener noreferrer">FormSubmit.co</a></li>
+        </ul>
+
+        <h3>GitHub Pages</h3>
+        <p>Our Site is hosted on GitHub Pages, which may collect standard server logs including IP addresses.</p>
+        <ul>
+            <li><strong>Data collected:</strong> IP address, access logs</li>
+            <li><strong>Purpose:</strong> Website hosting</li>
+            <li><strong>More info:</strong> <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#data-collection" target="_blank" rel="noopener noreferrer">GitHub Pages Data Collection</a></li>
+        </ul>
+
+        <h2>4. How to Manage Cookies</h2>
+        <p>You can control and manage cookies in several ways:</p>
+
+        <h3>Browser Settings</h3>
+        <p>Most web browsers allow you to manage cookies through their settings. You can typically:</p>
+        <ul>
+            <li>View what cookies are stored on your device</li>
+            <li>Delete individual cookies or all cookies</li>
+            <li>Block third-party cookies</li>
+            <li>Block all cookies from specific sites</li>
+            <li>Block all cookies entirely</li>
+        </ul>
+        <p>Please note that blocking all cookies may affect the functionality of some websites. Since our Site does not rely on first-party cookies for functionality, blocking cookies should not significantly impact your experience on our Site.</p>
+
+        <h3>Browser-Specific Instructions</h3>
+        <ul>
+            <li><strong>Chrome:</strong> Settings &gt; Privacy and Security &gt; Cookies and other site data</li>
+            <li><strong>Firefox:</strong> Settings &gt; Privacy &amp; Security &gt; Cookies and Site Data</li>
+            <li><strong>Safari:</strong> Preferences &gt; Privacy &gt; Manage Website Data</li>
+            <li><strong>Edge:</strong> Settings &gt; Cookies and site permissions</li>
+        </ul>
+
+        <h3>Opting Out of Google Services</h3>
+        <p>You can manage how Google uses your data by visiting <a href="https://myaccount.google.com/data-and-privacy" target="_blank" rel="noopener noreferrer">Google's Data &amp; Privacy settings</a>.</p>
+
+        <h2>5. Do Not Track</h2>
+        <p>Our Site does not currently respond to "Do Not Track" browser signals because we do not engage in tracking. Since we do not set tracking cookies or use analytics services, there is no tracking behavior to modify.</p>
+
+        <h2>6. Updates to This Policy</h2>
+        <p>We may update this Cookie Policy from time to time to reflect changes in technology, legislation, or our data practices. Any changes will be posted on this page with an updated effective date.</p>
+
+        <h2>7. Contact Us</h2>
+        <p>If you have questions about our use of cookies or this policy, please contact us:</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:hey@accesspathinnovations.com">hey@accesspathinnovations.com</a></li>
+            <li><strong>Website:</strong> <a href="https://www.accesspathinnovations.com">www.accesspathinnovations.com</a></li>
+        </ul>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">Access<span>Path</span> Innovations</div>
+            <div class="footer-tagline">Bridge the gaps. Change the story.</div>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/in/leslieguzman" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://www.instagram.com/limitlesscollege" target="_blank" rel="noopener noreferrer">Instagram</a>
+                <a href="mailto:hey@accesspathinnovations.com">Email</a>
+            </div>
+            <div class="footer-legal-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="cookie-policy.html">Cookie Policy</a>
+                <a href="accessibility.html">Accessibility</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Access Path Innovations. All rights reserved.</div>
+        </div>
+    </footer>
+
+</body>
+</html>
