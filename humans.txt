@@ -1,0 +1,19 @@
+/* TEAM */
+Organization: Access Path Innovations
+Founder: Leslie Guzman
+Site: https://www.accesspathinnovations.com
+Contact: hey@accesspathinnovations.com
+
+/* SITE */
+Language: English
+Standards: HTML5, CSS3, Schema.org, security.txt
+Software: Static site, no server-side processing
+
+/* SECURITY APPROACH */
+- Minimal data collection
+- No cookies, no analytics, no tracking
+- Static content only - minimal attack surface
+- Security headers configured via .htaccess
+- Content Security Policy enforced
+- All resources served over HTTPS
+- HSTS preload enabled
