@@ -39,7 +39,7 @@
         "email": "hey@accesspathinnovations.com",
         "founder": {
             "@type": "Person",
-            "name": "Leslie Guzman"
+            "name": "Leslie"
         },
         "areaServed": "United States",
         "knowsAbout": ["college accessibility", "disability inclusion", "higher education", "complex care coordination", "Duchenne muscular dystrophy", "rare disease", "universal design", "quadriplegia", "spinal muscular atrophy", "cerebral palsy", "wheelchair accessibility", "PCA coordination"]
@@ -1116,6 +1116,32 @@
 
         .footer-legal-links a:hover { color: var(--accent-purple); }
 
+        /* === SKIP NAV === */
+        .skip-nav {
+            position: absolute;
+            left: -9999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+            z-index: 9999;
+            padding: 1rem 2rem;
+            background: #1b1f4b;
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+        }
+
+        .skip-nav:focus {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: auto;
+            height: auto;
+            overflow: visible;
+        }
+
         /* === RESPONSIVE === */
         @media (max-width: 768px) {
             .nav-links { display: none; }
@@ -1136,7 +1162,7 @@
 <body>
 
     <!-- SKIP NAV -->
-    <a href="#problem" class="skip-nav" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:9999;padding:1rem 2rem;background:#1b1f4b;color:#fff;text-decoration:none;font-weight:600;border-radius:0 0 8px 0" onfocus="this.style.position='fixed';this.style.left='0';this.style.top='0';this.style.width='auto';this.style.height='auto';this.style.overflow='visible'" onblur="this.style.position='absolute';this.style.left='-9999px';this.style.width='1px';this.style.height='1px';this.style.overflow='hidden'">Skip to content</a>
+    <a href="#problem" class="skip-nav">Skip to content</a>
 
     <!-- NAVIGATION -->
     <nav aria-label="Main navigation">
@@ -1248,7 +1274,7 @@
                 </div>
                 <div class="why-visual">
                     <blockquote>"Families are learning reactively because no one paved the path. Schools want to help but don't know how. We've walked this road — and we're building it as we go so the next family doesn't start from zero."</blockquote>
-                    <cite>— Leslie Guzman, Founder &amp; CEO</cite>
+                    <cite>— Leslie, Founder &amp; CEO</cite>
                 </div>
             </div>
         </div>
@@ -1426,22 +1452,7 @@
         </div>
     </div>
 
-    <script>
-        (function() {
-            var consent = localStorage.getItem('cookie_consent');
-            if (!consent) {
-                document.getElementById('cookieBanner').classList.add('visible');
-            }
-            document.getElementById('cookieAccept').addEventListener('click', function() {
-                localStorage.setItem('cookie_consent', 'accepted');
-                document.getElementById('cookieBanner').classList.remove('visible');
-            });
-            document.getElementById('cookieDecline').addEventListener('click', function() {
-                localStorage.setItem('cookie_consent', 'declined');
-                document.getElementById('cookieBanner').classList.remove('visible');
-            });
-        })();
-    </script>
+    <script src="cookie-consent.js"></script>
 
 </body>
 </html>
