@@ -1,6 +1,6 @@
 /* TEAM */
 Organization: Access Path Innovations
-Founder: Leslie Guzman
+Founder: Leslie
 Site: https://www.accesspathinnovations.com
 Contact: hey@accesspathinnovations.com
 
