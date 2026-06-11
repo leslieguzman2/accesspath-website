@@ -59,18 +59,18 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --navy: #1b1f4b;
+            --navy: #00246c;
             --deep-blue: #2a2d6b;
-            --accent-purple: #7b4fb0;
-            --accent-blue: #5ba4c9;
+            --accent-purple: #5f28b4;
+            --accent-blue: #4faad6;
             --accent-gold: #e8a838;
             --light-bg: #f5f6fb;
             --white: #ffffff;
-            --text-dark: #1b1f4b;
+            --text-dark: #00246c;
             --text-gray: #5a6578;
-            --text-light: #8892a4;
-            --gradient-start: #1b1f4b;
-            --gradient-end: #3a2d7a;
+            --text-light: #5a6578;
+            --gradient-start: #00246c;
+            --gradient-end: #5f28b4;
         }
 
         html { scroll-behavior: smooth; }
@@ -288,6 +288,20 @@
             font-weight: 300;
         }
 
+        .hero-duo {
+            font-size: 1.02rem;
+            color: rgba(255,255,255,0.92);
+            margin: 0.9rem 0 1.4rem;
+            max-width: 560px;
+        }
+        .cred-strip {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 1.1rem 2rem;
+            font-size: 1.02rem;
+            border-bottom: 1px solid #e2e4f0;
+        }
         .hero-buttons {
             display: flex;
             gap: 1rem;
@@ -1152,10 +1166,40 @@
             .story-grid { grid-template-columns: 1fr; gap: 2rem; }
             .dual-grid { grid-template-columns: 1fr; }
             .email-form { flex-direction: column; }
-            .hero-buttons { flex-direction: column; }
+            .hero-duo {
+            font-size: 1.02rem;
+            color: rgba(255,255,255,0.92);
+            margin: 0.9rem 0 1.4rem;
+            max-width: 560px;
+        }
+        .cred-strip {
+            background: var(--light-bg);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 1.1rem 2rem;
+            font-size: 1.02rem;
+            border-bottom: 1px solid #e2e4f0;
+        }
+        .hero-buttons { flex-direction: column; }
             .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
             .cookie-banner-inner { flex-direction: column; text-align: center; }
             .cookie-banner-buttons { justify-content: center; }
+        }
+    
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 3px solid #e8a838;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
         }
     </style>
 </head>
@@ -1191,38 +1235,40 @@
         <div class="hero-content">
             <div class="hero-text">
                 <div class="hero-badge">Bridge the gaps. Change the story.</div>
-                <h1>College isn't just possible. A <span class="highlight">full college life</span> is the goal.</h1>
-                <p class="hero-sub">We help students with complex physical needs get to campus — and we help universities build the systems so they can truly thrive once they're there.</p>
+                <h1>The navigator your accessibility office <span class="highlight">isn't staffed to be</span>.</h1>
+                <p class="hero-sub">We help universities build repeatable systems so students with complex physical needs don't just enroll, they live a full college life. We help families get ahead of the barriers before they have to fight.</p>
+                <p class="hero-duo">We help universities build the systems, and families navigate them, so students with complex needs get a real path, not a workaround.</p>
                 <div class="hero-buttons">
                     <a href="https://calendar.app.google/Zver4497QT8cuE1i6" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Call &rarr;</a>
-                    <a href="#problem" class="btn-secondary">Learn More</a>
+                    <a href="#problem" class="btn-secondary">See How It Works</a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="dalle-campus.png" alt="Diego and friends on campus — real college life with a power wheelchair, autumn trees, and mountain views">
+                <img src="dalle-campus.png" alt="Diego and friends on campus, real college life with a power wheelchair, autumn trees, and mountain views">
                 <div class="hero-image-caption">This is what a full college life looks like.</div>
             </div>
         </div>
     </section>
+    <div class="cred-strip">Access Path Innovations is a focused practice, not a vendor. Currently partnering with university accessibility teams in Ohio, including a 2026 training engagement with the University of Cincinnati.</div>
 
     <!-- THE PROBLEM -->
     <section class="problem" id="problem">
         <div class="section-container">
             <div class="section-label">The Challenge</div>
             <h2 class="section-title">Families are reinventing the wheel. Every single time.</h2>
-            <p class="section-desc">Families of students with complex physical needs don't have a playbook. They're learning reactively — often too late and always overwhelmed. Too much falls on advocacy, strategy, and figuring out things that shouldn't need to be figured out from scratch. That's not fair.</p>
+            <p class="section-desc">Families of students with complex physical needs don't have a playbook. They're learning reactively, often too late and always overwhelmed. Too much falls on advocacy, strategy, and figuring out things that shouldn't need to be figured out from scratch. That's not fair.</p>
             <div class="stats-row">
                 <div class="stat-card">
                     <div class="stat-number">Every<span class="accent">.</span></div>
-                    <div class="stat-label">family starts from zero — no roadmap, no system, no shared knowledge</div>
+                    <div class="stat-label">family starts from zero, no roadmap, no system, no shared knowledge</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">Reactive</div>
-                    <div class="stat-label">learning that comes too late — families don't know what they don't know</div>
+                    <div class="stat-label">learning that comes too late, families don't know what they don't know</div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">Possible<span class="accent">.</span></div>
-                    <div class="stat-label">a full college life — not just enrollment, not just accommodation</div>
+                    <div class="stat-label">a full college life, not just enrollment, not just accommodation</div>
                 </div>
             </div>
         </div>
@@ -1233,12 +1279,12 @@
         <div class="section-container">
             <div class="section-label">What We Do</div>
             <h2 class="section-title">Inclusion isn't charity. It's design.</h2>
-            <p class="section-desc">We don't do accommodations as an afterthought. We apply universal design to the full college experience — so it simply works for everyone.</p>
+            <p class="section-desc">We don't do accommodations as an afterthought. We apply universal design to the full college experience, so it simply works for everyone.</p>
             <div class="services-grid">
                 <div class="service-card">
                     <div class="service-icon teal">&#x1F3D7;</div>
                     <h3>Systemic Solutions for Universities</h3>
-                    <p>We help institutions identify the small barriers that create big gaps — and build repeatable, affordable systems so every student with complex needs has a real path, not a workaround.</p>
+                    <p>We help institutions identify the small barriers that create big gaps, and build repeatable, affordable systems so every student with complex needs has a real path, not a workaround.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon gold">&#x1F4A1;</div>
@@ -1248,7 +1294,7 @@
                 <div class="service-card">
                     <div class="service-icon navy">&#x1F399;</div>
                     <h3>Speaking &amp; Training</h3>
-                    <p>We bring this conversation to conferences, campuses, and organizations — sharing what we've learned from walking this path so others don't have to start from scratch.</p>
+                    <p>We bring this conversation to conferences, campuses, and organizations, sharing what we've learned from walking this path so others don't have to start from scratch.</p>
                 </div>
             </div>
         </div>
@@ -1259,11 +1305,12 @@
         <div class="section-container">
             <div class="section-label">Why Access Path</div>
             <h2 class="section-title">Built from lived experience and systems expertise.</h2>
+            <p class="category-line" style="max-width:820px;margin:0.8rem auto 1.6rem;font-size:1.08rem;color:var(--text-gray);">Most accessibility support stops at compliance and assumes a stable disability. We specialize in the hardest case: students with complex, progressive physical needs (like Duchenne) who need systems that adapt as the student does. We are the partner that turns an institutional "we want to help" into a working "yes."</p>
             <div class="why-grid">
                 <div class="why-text">
                     <h3>We understand both sides.</h3>
                     <p>Access Path was founded by a parent and systems thinker who has navigated every barrier that keeps students with complex physical needs from thriving in higher education.</p>
-                    <p>We combine institutional knowledge with the daily reality of what it actually takes — from PCA coordination to accessibility infrastructure — to make college possible.</p>
+                    <p>We combine institutional knowledge with the daily reality of what it actually takes, from PCA coordination to accessibility infrastructure, to make college possible.</p>
                     <ul class="credential-list">
                         <li>AHEAD Member (Higher Education & Disability)</li>
                         <li>Systems engineering background</li>
@@ -1273,8 +1320,8 @@
                     </ul>
                 </div>
                 <div class="why-visual">
-                    <blockquote>"Families are learning reactively because no one paved the path. Schools want to help but don't know how. We've walked this road — and we're building it as we go so the next family doesn't start from zero."</blockquote>
-                    <cite>— Leslie, Founder &amp; CEO</cite>
+                    <blockquote>"Families are learning reactively because no one paved the path. Schools want to help but don't know how. We've walked this road, and we're building it as we go so the next family doesn't start from zero."</blockquote>
+                    <cite>,  Leslie, Founder &amp; CEO</cite>
                 </div>
             </div>
         </div>
@@ -1285,21 +1332,21 @@
         <div class="section-container">
             <div class="section-label">The Real Story</div>
             <h2 class="section-title">Not just enrollment. A full life.</h2>
-            <p class="section-desc">A student with Duchenne Muscular Dystrophy studying Urban Planning. Living independently. Playing power soccer. Making friends. Building a career. This isn't an inspirational exception — this is what happens when someone walks the path first.</p>
+            <p class="section-desc">A student with Duchenne Muscular Dystrophy studying Urban Planning. Living independently. Playing power soccer. Making friends. Building a career. This isn't an inspirational exception, this is what happens when someone walks the path first.</p>
             <div class="story-grid">
                 <div class="story-visual">
-                    <img src="dalle-campus.png" alt="Inclusive campus life — students with and without disabilities enjoying college together" class="story-visual-image" loading="lazy">
+                    <img src="dalle-campus.png" alt="Inclusive campus life, students with and without disabilities enjoying college together" class="story-visual-image" loading="lazy">
                     <div class="story-visual-content">
                         <div class="story-stat">It works.</div>
-                        <div class="story-stat-label" style="margin-bottom: 1.5rem;">When the right systems are in place, students with complex physical needs don't just attend college — they live it fully.</div>
+                        <div class="story-stat-label" style="margin-bottom: 1.5rem;">When the right systems are in place, students with complex physical needs don't just attend college, they live it fully.</div>
                         <div class="story-fact">But right now, every family figures this out alone. The learning is reactive, often late, and always overwhelming. We walked this path so the next family doesn't have to start from zero.</div>
                     </div>
                 </div>
                 <div class="story-text">
                     <h3>Small barriers. Big gaps.</h3>
                     <p>A housing form with no place for live-in support. A speech that's not intelligible and no system to bridge the gap. A student who can't find the words to ask for help because no one thought to ask them first.</p>
-                    <p>These aren't failures of caring — they're gaps in thinking. Universities want to help. They just haven't had to design for this before. And families haven't walked this path yet — they don't know what they don't know.</p>
-                    <div class="story-highlight">"It requires a completely different way of thinking. Once you see it, you can't unsee it — every small barrier connects to a bigger system that either opens a door or quietly closes it."</div>
+                    <p>These aren't failures of caring, they're gaps in thinking. Universities want to help. They just haven't had to design for this before. And families haven't walked this path yet, they don't know what they don't know.</p>
+                    <div class="story-highlight">"It requires a completely different way of thinking. Once you see it, you can't unsee it, every small barrier connects to a bigger system that either opens a door or quietly closes it."</div>
                     <p>We've seen it. We've lived it. And we know how to help both sides get it right.</p>
                 </div>
             </div>
@@ -1311,24 +1358,24 @@
         <div class="section-container">
             <div class="section-label">Both Sides</div>
             <h2 class="section-title">Nobody should be doing this alone.</h2>
-            <p class="section-desc">Families know their kids. Schools know their systems. Neither has the full picture. We connect both — so the path gets clearer for everyone.</p>
+            <p class="section-desc">Families know their kids. Schools know their systems. Neither has the full picture. We connect both, so the path gets clearer for everyone.</p>
             <div class="dual-grid">
                 <div class="dual-card families">
                     <h3>For Families</h3>
-                    <p>You know your child's needs better than anyone. But you haven't walked this path yet — and you shouldn't have to figure out every system, every workaround, every advocacy strategy on your own.</p>
+                    <p>You know your child's needs better than anyone. But you haven't walked this path yet, and you shouldn't have to figure out every system, every workaround, every advocacy strategy on your own.</p>
                     <ul>
-                        <li>College IS possible — and so is a full college life</li>
-                        <li>Stop learning reactively — get ahead of the barriers</li>
+                        <li>College IS possible, and so is a full college life</li>
+                        <li>Stop learning reactively, get ahead of the barriers</li>
                         <li>Learn from families who've already navigated this</li>
                         <li>Know what to ask for before you need to fight for it</li>
                     </ul>
                 </div>
                 <div class="dual-card schools">
                     <h3>For Universities</h3>
-                    <p>You want to be inclusive — but the existing solutions are expensive, one-off, and don't scale. We help you build systems that work for students with Duchenne, quadriplegia, complex care needs, and beyond.</p>
+                    <p>You want to be inclusive, but the existing solutions are expensive, one-off, and don't scale. We help you build systems that work for students with Duchenne, quadriplegia, complex care needs, and beyond.</p>
                     <ul>
                         <li>Understand the barriers you can't see from the inside</li>
-                        <li>Build affordable, repeatable infrastructure — not one-off fixes</li>
+                        <li>Build affordable, repeatable infrastructure, not one-off fixes</li>
                         <li>Partner with families instead of guessing what they need</li>
                         <li>Make inclusion a design principle, not a compliance checkbox</li>
                     </ul>
@@ -1350,7 +1397,7 @@
                         <span class="blog-tag">Universal Design</span>
                         <h3>Inclusion Is Design, Not Charity: Rethinking How Universities Welcome Students with Complex Needs</h3>
                     </div>
-                    <p>When we stop treating accessibility as an accommodation and start treating it as design, everything changes — for the student, the institution, and the people who support them.</p>
+                    <p>When we stop treating accessibility as an accommodation and start treating it as design, everything changes, for the student, the institution, and the people who support them.</p>
                 </div>
                 <div class="blog-card">
                     <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80" alt="Diverse group of friends" class="blog-card-image" loading="lazy">
@@ -1358,7 +1405,7 @@
                         <span class="blog-tag">Families</span>
                         <h3>You Don't Know What You Don't Know: Why Reactive Learning Is Failing Families</h3>
                     </div>
-                    <p>Families of students with complex needs shouldn't have to become systems experts overnight. Here's why the current model puts too much on their shoulders — and what needs to change.</p>
+                    <p>Families of students with complex needs shouldn't have to become systems experts overnight. Here's why the current model puts too much on their shoulders, and what needs to change.</p>
                 </div>
                 <div class="blog-card">
                     <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=600&q=80" alt="Graduation celebration" class="blog-card-image" loading="lazy">
@@ -1366,7 +1413,7 @@
                         <span class="blog-tag">Full College Life</span>
                         <h3>Beyond Enrollment: What a Full College Life Actually Looks Like for Students with Complex Needs</h3>
                     </div>
-                    <p>Getting to campus is just the beginning. Friends, independence, purpose, career — these aren't extras. They're the whole point. And they're possible.</p>
+                    <p>Getting to campus is just the beginning. Friends, independence, purpose, career, these aren't extras. They're the whole point. And they're possible.</p>
                 </div>
             </div>
             <p class="blog-coming">Full articles coming soon. <a href="mailto:hey@accesspathinnovations.com" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Subscribe for updates &rarr;</a></p>
@@ -1376,8 +1423,8 @@
     <!-- CTA -->
     <section class="cta" id="contact">
         <div class="cta-content">
-            <h2>Let's build an accessible path — together.</h2>
-            <p>Whether you're a university accessibility office, a family navigating the system, or an organization committed to inclusive education — let's talk.</p>
+            <h2>Let's build an accessible path, together.</h2>
+            <p>Whether you're a university accessibility office, a family navigating the system, or an organization committed to inclusive education, let's talk.</p>
             <div class="hero-buttons" style="justify-content: center;">
                 <a href="https://calendar.app.google/Zver4497QT8cuE1i6" target="_blank" rel="noopener noreferrer" class="btn-primary">Book a Call &rarr;</a>
                 <a href="mailto:hey@accesspathinnovations.com" class="btn-secondary">Send an Email</a>
@@ -1389,7 +1436,7 @@
     <section class="social-follow">
         <div class="social-follow-inner">
             <h3>Follow the journey.</h3>
-            <p>Real stories, resources, and perspectives on making college accessible — not in theory, but in practice.</p>
+            <p>Real stories, resources, and perspectives on making college accessible, not in theory, but in practice.</p>
             <div class="social-buttons">
                 <a href="https://www.instagram.com/limitlesscollege" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
                     <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
